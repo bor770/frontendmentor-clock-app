@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
+  imports: [CommonModule, RouterOutlet],
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'clock-app';
-}
+export class AppComponent {}
