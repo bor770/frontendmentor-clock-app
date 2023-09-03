@@ -23,3 +23,10 @@ export const selectLayoutWidth = createSelector(
   selectLayoutState,
   fromLayout.getWidth
 );
+
+const selectTimeState = createFeatureSelector<fromTime.State>(`time`);
+
+export const selectTimeLocation = createSelector(
+  selectTimeState,
+  fromTime.getLocation
+);

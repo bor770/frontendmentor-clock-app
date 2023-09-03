@@ -16,3 +16,6 @@ export const timeReducer = createReducer(
     (state, { location }): State => ({ ...state, location })
   )
 );
+
+export const getLocation = (state: State) =>
+  `${state.location.city}, ${state.location.country}`;
