@@ -4,16 +4,19 @@
     timeOfDay: timeOfDay$,
     width: width$
   } as observables"
+  [ngClass]="observables.width"
   [ngStyle]="{
     backgroundImage: bgImage(observables.timeOfDay, observables.width)
   }"
 >
-  <header>
-    <app-quote *ngIf="!observables.expanded"></app-quote>
+  <header *ngIf="!observables.expanded">
+    <app-quote></app-quote>
   </header>
   <main>
-    <app-time></app-time>
-    <app-toggle></app-toggle>
+    <div class="time">
+      <app-time></app-time>
+      <app-toggle></app-toggle>
+    </div>
     <app-expanded *ngIf="observables.expanded"></app-expanded>
   </main>
 </div>

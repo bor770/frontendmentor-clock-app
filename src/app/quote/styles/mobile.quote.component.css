@@ -1,0 +1,9 @@
+.mobile.container {
+  font-size: 0.75rem;
+  height: 6.06rem;
+  line-height: 183.33%;
+}
+
+.mobile p {
+  margin-bottom: 0.5rem;
+}

@@ -12,5 +12,5 @@ export const quoteReducer = createReducer(
   on(QuoteActions.set, (state, { quote }): State => ({ ...state, ...quote }))
 );
 
-export const getAuthor = (state: State) => state.author;
-export const getContent = (state: State) => state.content;
+export const getAuthor = (state: State) => state?.author;
+export const getContent = (state: State) => state?.content;

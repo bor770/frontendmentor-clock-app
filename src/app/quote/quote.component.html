@@ -1,1 +1,22 @@
-<p>quote works!</p>
+<div
+  *ngrxLet="{
+    author: author$,
+    content: content$,
+    width: width$
+  } as observables"
+  class="container"
+  [ngClass]="observables.width"
+>
+  <blockquote>
+    <p>{{ observables.content }}</p>
+    <footer>
+      <cite>{{ observables.author }}</cite>
+    </footer>
+  </blockquote>
+  <button (click)="onRefresh()">
+    <img
+      src="../../assets/images/desktop/icon-refresh.svg"
+      alt="Refresh Icon"
+    />
+  </button>
+</div>

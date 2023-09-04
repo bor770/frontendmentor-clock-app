@@ -18,7 +18,6 @@ import * as fromRoot from './store/root.reducer';
     CommonModule,
     LetDirective,
     RouterOutlet,
-    BaseComponent,
     ExpandedComponent,
     QuoteComponent,
     TimeComponent,

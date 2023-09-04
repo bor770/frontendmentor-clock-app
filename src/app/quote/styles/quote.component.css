@@ -1,0 +1,17 @@
+.container {
+  color: var(--color-3);
+  display: flex;
+  justify-content: space-between;
+}
+
+cite {
+  font-style: normal;
+  font-weight: 700;
+}
+
+button {
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
