@@ -6,10 +6,9 @@ import { Observable } from 'rxjs';
 
 import { BaseComponent } from './shared/base/base.component';
 import { ExpandedComponent } from './expanded/expanded.component';
+import { MainComponent } from './main/main.component';
 import { QuoteComponent } from './quote/quote.component';
-import { TimeComponent } from './time/time.component';
 import { TimeOfDay } from './shared/time-data/time-data.model';
-import { ToggleComponent } from './toggle/toggle.component';
 import { Width } from './shared/layout/layout.model';
 import * as fromRoot from './store/root.reducer';
 
@@ -20,8 +19,7 @@ import * as fromRoot from './store/root.reducer';
     RouterOutlet,
     ExpandedComponent,
     QuoteComponent,
-    TimeComponent,
-    ToggleComponent,
+    MainComponent,
   ],
   selector: 'app-root',
   standalone: true,

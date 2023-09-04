@@ -1,0 +1,22 @@
+<div
+  *ngrxLet="{
+    location: location$,
+    time: time$,
+    timeData: timeData$,
+    timeOfDay: timeOfDay$,
+    width: width$
+  } as observables"
+  [ngClass]="observables.width"
+>
+  <div *ngIf="observables.timeData" class="container">
+    <div class="greeting">
+      <img alt="Greeting Icon" [src]="greetingIcon(observables.timeOfDay)" />
+      <span class="greeting-phrase">Good {{ observables.timeOfDay }}</span>
+    </div>
+    <div class="time">
+      <span class="current-time">{{ observables.time }}</span>
+      <span class="abbreviation">{{ observables.timeData.abbreviation }}</span>
+    </div>
+    <div class="location">In {{ observables.location }}</div>
+  </div>
+</div>

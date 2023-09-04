@@ -1,0 +1,13 @@
+.container {
+  color: var(--color-3);
+}
+
+.greeting {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.greeting-phrase {
+  letter-spacing: 4px;
+}

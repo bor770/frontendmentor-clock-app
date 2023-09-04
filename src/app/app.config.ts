@@ -8,7 +8,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { LayoutEffects } from './shared/layout/store/layout.effects';
 import { QuoteEffects } from './quote/store/quote.effects';
 import { TimeDataEffects } from './shared/time-data/store/time-data.effects';
-import { TimeEffects } from './time/store/time.effects';
+import { TimeEffects } from './main/time/store/time.effects';
 import { appReducer } from './store/root.reducer';
 import { routes } from './app.routes';
 

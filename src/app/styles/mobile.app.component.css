@@ -5,3 +5,7 @@
 .mobile header {
   padding: 1.98rem 1.56rem 7.96rem var(--padding-left);
 }
+
+.mobile main {
+  padding-top: 6.19rem;
+}

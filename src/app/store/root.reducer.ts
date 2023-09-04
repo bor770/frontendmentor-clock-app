@@ -6,7 +6,7 @@ import {
 
 import * as fromLayout from '../shared/layout/store/layout.reducer';
 import * as fromQuote from '../quote/store/quote.reducer';
-import * as fromTime from '../time/store/time.reducer';
+import * as fromTime from '../main/time/store/time.reducer';
 import * as fromTimeData from '../shared/time-data/store/time-data.reducer';
 import * as fromUI from '../shared/ui/store/ui.reducer';
 

@@ -29,7 +29,9 @@ export const getTimeOfDay = (state: State): TimeOfDay => {
 };
 export const getTime = (state: State) => {
   const pad = (number: number): string => String(number).padStart(2, `0`);
-  const time = state.dateTime;
+  const time = state?.dateTime;
 
-  return `${pad(time.getHours())}:${pad(time.getMinutes())}`;
+  if (time) {
+    return `${pad(time.getHours())}:${pad(time.getMinutes())}`;
+  }
 };
