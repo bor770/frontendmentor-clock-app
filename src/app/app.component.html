@@ -1,0 +1,19 @@
+<div
+  *ngrxLet="{
+    expanded: expanded$,
+    timeOfDay: timeOfDay$,
+    width: width$
+  } as observables"
+  [ngStyle]="{
+    backgroundImage: bgImage(observables.timeOfDay, observables.width)
+  }"
+>
+  <header>
+    <app-quote *ngIf="!observables.expanded"></app-quote>
+  </header>
+  <main>
+    <app-time></app-time>
+    <app-toggle></app-toggle>
+    <app-expanded *ngIf="observables.expanded"></app-expanded>
+  </main>
+</div>

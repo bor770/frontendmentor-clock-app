@@ -1,12 +1,56 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LetDirective } from '@ngrx/component';
+import { Observable } from 'rxjs';
+
+import { BaseComponent } from './shared/base/base.component';
+import { ExpandedComponent } from './expanded/expanded.component';
+import { QuoteComponent } from './quote/quote.component';
+import { TimeComponent } from './time/time.component';
+import { TimeOfDay } from './shared/time-data/time-data.model';
+import { ToggleComponent } from './toggle/toggle.component';
+import { Width } from './shared/layout/layout.model';
+import * as fromRoot from './store/root.reducer';
 
 @Component({
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    LetDirective,
+    RouterOutlet,
+    BaseComponent,
+    ExpandedComponent,
+    QuoteComponent,
+    TimeComponent,
+    ToggleComponent,
+  ],
   selector: 'app-root',
   standalone: true,
-  styleUrls: ['./app.component.css'],
+  styleUrls: [
+    './styles/app.component.css',
+    `./styles/mobile.app.component.css`,
+    `./styles/tablet.app.component.css`,
+    `./styles/desktop.app.component.css`,
+  ],
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent extends BaseComponent implements OnInit {
+  expanded$: Observable<boolean>;
+  timeOfDay$: Observable<TimeOfDay>;
+
+  ngOnInit(): void {
+    super.ngOnInit();
+
+    const store = this.store;
+
+    this.expanded$ = store.select(fromRoot.selectUIExpanded);
+    this.timeOfDay$ = store.select(fromRoot.selectTimeDataTimeOfDay);
+  }
+
+  bgImage(timeOfDay: TimeOfDay, width: Width) {
+    const time =
+      timeOfDay === `morning` || timeOfDay === `afternoon` ? `day` : `night`;
+
+    return `url(../assets/images/${width}/bg-image-${time}time.jpg)`;
+  }
+}

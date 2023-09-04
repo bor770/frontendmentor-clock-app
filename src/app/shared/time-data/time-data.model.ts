@@ -15,3 +15,5 @@ export type TimeData = {
   timezone: string;
   weekNumber: number;
 };
+
+export type TimeOfDay = `morning` | `afternoon` | `evening`;
