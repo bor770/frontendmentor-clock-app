@@ -50,3 +50,12 @@ export const selectTimeLocation = createSelector(
 
 export const selectTimeDataState =
   createFeatureSelector<fromTimeData.State>(`timeData`);
+
+export const selectTimeDataHours = createSelector(
+  selectTimeDataState,
+  fromTimeData.getHours
+);
+export const selectTimeDataTime = createSelector(
+  selectTimeDataState,
+  fromTimeData.getTime
+);

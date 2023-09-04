@@ -9,7 +9,7 @@ export type WorldtimeapiResonse = {
 
 export type TimeData = {
   abbreviation: string;
-  time: string;
+  dateTime: Date;
   dayOfWeek: number;
   dayOfYear: number;
   timezone: string;

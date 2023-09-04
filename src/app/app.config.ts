@@ -7,14 +7,14 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { LayoutEffects } from './shared/layout/store/layout.effects';
 import { QuoteEffects } from './quote/store/quote.effects';
-import { TimeEffects } from './time/store/time.effects';
 import { TimeDataEffects } from './shared/time-data/store/time-data.effects';
+import { TimeEffects } from './time/store/time.effects';
 import { appReducer } from './store/root.reducer';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideEffects(LayoutEffects, QuoteEffects, TimeEffects, TimeDataEffects),
+    provideEffects(LayoutEffects, QuoteEffects, TimeDataEffects, TimeEffects),
     provideHttpClient(),
     provideRouter(routes),
     provideStore(appReducer),

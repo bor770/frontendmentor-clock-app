@@ -24,9 +24,9 @@ export class TimeDataEffects {
             return TimeDataActions.setData({
               data: {
                 abbreviation: data.abbreviation,
+                dateTime: new Date(data.datetime),
                 dayOfWeek: data.day_of_week,
                 dayOfYear: data.day_of_year,
-                time: `${pad(time.getHours())}:${pad(time.getMinutes())}`,
                 timezone: data.timezone,
                 weekNumber: data.week_number,
               },
