@@ -11,7 +11,12 @@ import * as fromRoot from '../../store/root.reducer';
   imports: [CommonModule, LetDirective],
   selector: 'app-time',
   standalone: true,
-  styleUrls: ['./styles/time.component.css'],
+  styleUrls: [
+    './styles/time.component.css',
+    `./styles/mobile.time.component.css`,
+    `./styles/tablet.time.component.css`,
+    `./styles/desktop.time.component.css`,
+  ],
   templateUrl: './time.component.html',
 })
 export class TimeComponent extends BaseComponent implements OnInit {
