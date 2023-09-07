@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from './shared/base/base.component';
 import { ExpandedComponent } from './expanded/expanded.component';
 import { MainComponent } from './main/main.component';
-import { QuoteComponent } from './quote/quote.component';
 import { TimeOfDay } from './shared/time-data/time-data.model';
 import { Width } from './shared/layout/layout.model';
 import * as fromRoot from './store/root.reducer';
@@ -18,7 +17,6 @@ import * as fromRoot from './store/root.reducer';
     LetDirective,
     RouterOutlet,
     ExpandedComponent,
-    QuoteComponent,
     MainComponent,
   ],
   selector: 'app-root',

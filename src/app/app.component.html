@@ -9,9 +9,6 @@
     backgroundImage: bgImage(observables.timeOfDay, observables.width)
   }"
 >
-  <header *ngIf="!observables.expanded">
-    <app-quote></app-quote>
-  </header>
   <main>
     <app-main></app-main>
     <app-expanded *ngIf="observables.expanded"></app-expanded>
