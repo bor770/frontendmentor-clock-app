@@ -9,7 +9,7 @@
     backgroundImage: bgImage(observables.timeOfDay, observables.width)
   }"
 >
-  <main>
+  <main [ngClass]="{ 'not-expanded': !observables.expanded }">
     <app-main></app-main>
     <app-expanded *ngIf="observables.expanded"></app-expanded>
   </main>

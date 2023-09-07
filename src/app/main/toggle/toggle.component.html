@@ -1,1 +1,6 @@
-<p>toggle works!</p>
+<div
+  *ngrxLet="{ expanded: expanded$, width: width$ } as observables"
+  [ngClass]="observables.width"
+>
+
+</div>
