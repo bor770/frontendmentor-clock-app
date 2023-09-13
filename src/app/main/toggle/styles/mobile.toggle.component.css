@@ -1,0 +1,10 @@
+.mobile button {
+  gap: 15px;
+  padding: 0.19rem 0.25rem 0.25rem 1.06rem;
+}
+
+.mobile .content {
+  font-size: 0.75rem;
+  line-height: 116.67%;
+  letter-spacing: 3.75px;
+}

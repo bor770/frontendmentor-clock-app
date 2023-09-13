@@ -1,3 +1,7 @@
 .mobile {
-  padding-top: 6.19rem;
+  padding: 6.19rem 0 2.5rem var(--padding-left);
+}
+
+.mobile app-time {
+  margin-bottom: 3rem;
 }

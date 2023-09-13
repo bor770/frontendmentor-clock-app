@@ -1,0 +1,15 @@
+button {
+  align-items: center;
+  background-color: var(--color-3);
+  border: none;
+  border-radius: 1.75rem;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+}
+
+.content {
+  font-weight: 700;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
