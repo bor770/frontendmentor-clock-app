@@ -2,8 +2,12 @@
   *ngrxLet="{ expanded: expanded$, width: width$ } as observables"
   [ngClass]="observables.width"
 >
-  <button (click)="onToggleExpanded()">
+  <button
+    (click)="onToggleExpanded()"
+    (mouseenter)="onHover()"
+    (mouseleave)="onHover()"
+  >
     <span class="content">{{ buttonContent(observables.expanded) }}</span>
-    <img [src]="imgSrc(observables.expanded)" alt="Arrow" />
+    <img [src]="imgSrc(observables.expanded, observables.width)" alt="Arrow" />
   </button>
 </div>

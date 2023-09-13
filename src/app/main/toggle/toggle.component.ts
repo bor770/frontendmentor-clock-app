@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { BaseComponent } from '../../shared/base/base.component';
 import { ToggleAction } from './toggle.model';
+import { Width } from '../../shared/layout/layout.model';
 import * as fromRoot from '../../store/root.reducer';
 import * as UIActions from '../../shared/ui/store/ui.actions';
 
@@ -22,6 +23,7 @@ import * as UIActions from '../../shared/ui/store/ui.actions';
 })
 export class ToggleComponent extends BaseComponent implements OnInit {
   expanded$: Observable<boolean>;
+  hover = false;
 
   ngOnInit(): void {
     super.ngOnInit();
@@ -33,10 +35,14 @@ export class ToggleComponent extends BaseComponent implements OnInit {
     return expanded ? `Less` : `More`;
   }
 
-  imgSrc(expanded: boolean) {
+  imgSrc(expanded: boolean, width: Width) {
     return `../../../assets/images/desktop/icon-arrow-${
       expanded ? `up` : `down`
-    }-circle.svg`;
+    }-circle${this.hover && width === `desktop` ? `-hover` : ``}.svg`;
+  }
+
+  onHover() {
+    this.hover = !this.hover;
   }
 
   onToggleExpanded() {
