@@ -1,0 +1,15 @@
+.container {
+  backdrop-filter: blur(20.39px);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.name {
+  text-transform: uppercase;
+}
+
+.value {
+  font-weight: 700;
+}

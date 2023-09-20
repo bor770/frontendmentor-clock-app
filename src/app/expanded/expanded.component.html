@@ -1,1 +1,26 @@
-<p>expanded works!</p>
+<div
+  *ngrxLet="{
+    timeDataState: timeDataState$,
+    timeDataTimeOfDay: timeDataTimeOfDay$,
+    width: width$
+  } as observables"
+  [ngClass]="observables.width"
+>
+  <div
+    class="container"
+    [ngClass]="{
+      day:
+        observables.timeDataTimeOfDay === 'morning' ||
+        observables.timeDataTimeOfDay === 'afternoon',
+      night: observables.timeDataTimeOfDay === 'evening'
+    }"
+  >
+    <ul>
+      <li *ngFor="let feature of features">
+        <span class="name">{{ feature.name }}</span>
+        <span class="value">{{ observables.timeDataState[feature.key] }}</span>
+      </li>
+    </ul>
+    <div *ngIf="observables.width === 'desktop'" class="divider"></div>
+  </div>
+</div>

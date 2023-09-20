@@ -1,0 +1,24 @@
+.mobile .container {
+  padding: 3rem 1.62rem;
+}
+
+.mobile ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+}
+
+.mobile li {
+  display: contents;
+}
+
+.mobile .name {
+  font-size: 0.62rem;
+  line-height: 280%;
+  letter-spacing: 2px;
+}
+
+.mobile .value {
+  font-size: 1.25rem;
+  justify-self: end;
+}
