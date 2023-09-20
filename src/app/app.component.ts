@@ -1,3 +1,10 @@
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
@@ -12,6 +19,19 @@ import { Width } from './shared/layout/layout.model';
 import * as fromRoot from './store/root.reducer';
 
 @Component({
+  animations: [
+    trigger(`expanded`, [
+      state(`in`, style({ height: `auto`, transform: `none` })),
+      transition(`void => *`, [
+        style({ height: `0`, transform: `translateY(100%)` }),
+        animate(500),
+      ]),
+      transition(
+        `* => void`,
+        animate(500, style({ height: `0`, transform: `translateY(100%)` }))
+      ),
+    ]),
+  ],
   imports: [
     CommonModule,
     LetDirective,
