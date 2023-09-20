@@ -6,6 +6,7 @@ button {
   cursor: pointer;
   display: flex;
   font: inherit;
+  justify-content: space-between;
 }
 
 .content {
