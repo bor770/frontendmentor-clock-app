@@ -16,7 +16,8 @@ import { ExpandedComponent } from './expanded/expanded.component';
 import { MainComponent } from './main/main.component';
 import { TimeOfDay } from './shared/time-data/time-data.model';
 import { Width } from './shared/layout/layout.model';
-import * as fromRoot from './store/root.reducer';
+import * as TimeDataSelectors from './shared/time-data/store/time-data.selectors';
+import * as UiSelectors from './shared/ui/store/ui.selectors';
 
 @Component({
   animations: [
@@ -58,8 +59,8 @@ export class AppComponent extends BaseComponent implements OnInit {
 
     const store = this.store;
 
-    this.expanded$ = store.select(fromRoot.selectUIExpanded);
-    this.timeOfDay$ = store.select(fromRoot.selectTimeDataTimeOfDay);
+    this.expanded$ = store.select(UiSelectors.selectExpanded);
+    this.timeOfDay$ = store.select(TimeDataSelectors.selectTimeOfDay);
   }
 
   bgImage(timeOfDay: TimeOfDay, width: Width) {

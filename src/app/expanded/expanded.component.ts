@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from '../shared/base/base.component';
 import { Features } from './expanded.model';
 import { TimeData, TimeOfDay } from '../shared/time-data/time-data.model';
-import * as fromRoot from '../store/root.reducer';
+import * as TimeDataSelectors from '../shared/time-data/store/time-data.selectors';
 
 @Component({
   imports: [CommonModule, LetDirective],
@@ -35,9 +35,9 @@ export class ExpandedComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     super.ngOnInit();
 
-    this.timeDataState$ = this.store.select(fromRoot.selectTimeDataState);
+    this.timeDataState$ = this.store.select(TimeDataSelectors.selectState);
     this.timeDataTimeOfDay$ = this.store.select(
-      fromRoot.selectTimeDataTimeOfDay
+      TimeDataSelectors.selectTimeOfDay
     );
   }
 }

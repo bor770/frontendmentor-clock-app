@@ -1,0 +1,16 @@
+.tablet {
+  font-size: 1.12rem;
+}
+
+.tablet .container {
+  display: block;
+}
+
+.tablet .greeting {
+  align-items: center;
+}
+
+.tablet .greeting-phrase {
+  letter-spacing: 3.6px;
+  line-height: 155.56%;
+}

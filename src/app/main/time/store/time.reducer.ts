@@ -9,13 +9,10 @@ export interface State {
 
 const initialState: State = { location: null };
 
-export const timeReducer = createReducer(
+export const reducer = createReducer(
   initialState,
   on(
     TimeActions.setLocation,
-    (state, { location }): State => ({ ...state, location })
+    (state, action): State => ({ ...state, location: action.location })
   )
 );
-
-export const getLocation = (state: State) =>
-  `${state.location.city}, ${state.location.country}`;

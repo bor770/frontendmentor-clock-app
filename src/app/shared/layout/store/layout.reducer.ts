@@ -3,15 +3,11 @@ import { createReducer, on } from '@ngrx/store';
 import { Width } from '../layout.model';
 import * as LayoutActions from './layout.actions';
 
-export interface State {
-  width: Width;
-}
+export type State = Width;
 
-const initialState: State = { width: null };
+const initialState: State = null;
 
-export const layoutReducer = createReducer(
+export const reducer = createReducer(
   initialState,
-  on(LayoutActions.setWidth, (state, { width }): State => ({ ...state, width }))
+  on(LayoutActions.setWidth, (state, action): State => action.width)
 );
-
-export const getWidth = (state: State) => state.width;

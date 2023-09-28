@@ -1,3 +1,3 @@
 import { createAction } from '@ngrx/store';
 
-export const toggleExpanded = createAction(`[UI] Toggle Expanded`);
+export const toggleExpanded = createAction(`[Ui] Toggle Expanded`);

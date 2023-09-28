@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from '../../shared/base/base.component';
 import { ToggleAction } from './toggle.model';
 import { Width } from '../../shared/layout/layout.model';
-import * as fromRoot from '../../store/root.reducer';
-import * as UIActions from '../../shared/ui/store/ui.actions';
+import * as UiActions from '../../shared/ui/store/ui.actions';
+import * as UiSelectors from '../../shared/ui/store/ui.selectors';
 
 @Component({
   imports: [CommonModule, LetDirective],
@@ -28,7 +28,7 @@ export class ToggleComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     super.ngOnInit();
 
-    this.expanded$ = this.store.select(fromRoot.selectUIExpanded);
+    this.expanded$ = this.store.select(UiSelectors.selectExpanded);
   }
 
   buttonContent(expanded: boolean): ToggleAction {
@@ -46,6 +46,6 @@ export class ToggleComponent extends BaseComponent implements OnInit {
   }
 
   onToggleExpanded() {
-    this.store.dispatch(UIActions.toggleExpanded());
+    this.store.dispatch(UiActions.toggleExpanded());
   }
 }

@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 
 import { BaseComponent } from '../../shared/base/base.component';
 import { TimeData, TimeOfDay } from '../../shared/time-data/time-data.model';
-import * as fromRoot from '../../store/root.reducer';
+import * as TimeDataSelectors from '../../shared/time-data/store/time-data.selectors';
+import * as TimeSelectors from './store/time.selectors';
 
 @Component({
   imports: [CommonModule, LetDirective],
@@ -30,10 +31,10 @@ export class TimeComponent extends BaseComponent implements OnInit {
 
     const store = this.store;
 
-    this.location$ = store.select(fromRoot.selectTimeLocation);
-    this.time$ = store.select(fromRoot.selectTimeDataTime);
-    this.timeData$ = store.select(fromRoot.selectTimeDataState);
-    this.timeOfDay$ = store.select(fromRoot.selectTimeDataTimeOfDay);
+    this.location$ = store.select(TimeSelectors.selectLocation);
+    this.time$ = store.select(TimeDataSelectors.selectTime);
+    this.timeData$ = store.select(TimeDataSelectors.selectState);
+    this.timeOfDay$ = store.select(TimeDataSelectors.selectTimeOfDay);
   }
 
   greetingIcon(timeOfDay: TimeOfDay) {

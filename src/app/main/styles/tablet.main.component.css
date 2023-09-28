@@ -1,0 +1,7 @@
+.tablet {
+  padding: 9.56rem 0 4rem var(--padding-left);
+}
+
+.tablet app-time {
+  margin-bottom: 5rem;
+}

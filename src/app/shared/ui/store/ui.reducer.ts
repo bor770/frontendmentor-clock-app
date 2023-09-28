@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import * as UIActions from './ui.actions';
+import * as UiActions from './ui.actions';
 
 export interface State {
   expanded: boolean;
@@ -8,12 +8,10 @@ export interface State {
 
 const initialState: State = { expanded: null };
 
-export const uiReducer = createReducer(
+export const reducer = createReducer(
   initialState,
   on(
-    UIActions.toggleExpanded,
+    UiActions.toggleExpanded,
     (state): State => ({ ...state, expanded: !state.expanded })
   )
 );
-
-export const getExpanded = (state: State) => state.expanded;

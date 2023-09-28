@@ -11,7 +11,16 @@
   <div *ngIf="observables.timeData" class="container">
     <div class="greeting">
       <img alt="Greeting Icon" [src]="greetingIcon(observables.timeOfDay)" />
-      <span class="greeting-phrase">Good {{ observables.timeOfDay }}</span>
+      <div class="greeting-phrase">
+        Good {{ observables.timeOfDay
+        }}<span
+          class="currently"
+          *ngIf="
+            observables.width === 'tablet' || observables.width === 'desktop'
+          "
+          >, it's currently</span
+        >
+      </div>
     </div>
     <div class="time">
       <span class="current-time">{{ observables.time }}</span>

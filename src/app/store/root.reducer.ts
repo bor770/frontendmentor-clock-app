@@ -1,57 +1,20 @@
-import {
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-} from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 import * as fromLayout from '../shared/layout/store/layout.reducer';
 import * as fromTime from '../main/time/store/time.reducer';
 import * as fromTimeData from '../shared/time-data/store/time-data.reducer';
-import * as fromUI from '../shared/ui/store/ui.reducer';
+import * as fromUi from '../shared/ui/store/ui.reducer';
 
-interface State {
+interface AppState {
   layout: fromLayout.State;
   time: fromTime.State;
   timeData: fromTimeData.State;
-  ui: fromUI.State;
+  ui: fromUi.State;
 }
 
-export const appReducer: ActionReducerMap<State> = {
-  layout: fromLayout.layoutReducer,
-  time: fromTime.timeReducer,
-  timeData: fromTimeData.timeDataReducer,
-  ui: fromUI.uiReducer,
+export const appReducer: ActionReducerMap<AppState> = {
+  layout: fromLayout.reducer,
+  time: fromTime.reducer,
+  timeData: fromTimeData.reducer,
+  ui: fromUi.reducer,
 };
-
-const selectLayoutState = createFeatureSelector<fromLayout.State>(`layout`);
-
-export const selectLayoutWidth = createSelector(
-  selectLayoutState,
-  fromLayout.getWidth
-);
-
-const selectTimeState = createFeatureSelector<fromTime.State>(`time`);
-
-export const selectTimeLocation = createSelector(
-  selectTimeState,
-  fromTime.getLocation
-);
-
-export const selectTimeDataState =
-  createFeatureSelector<fromTimeData.State>(`timeData`);
-
-export const selectTimeDataTime = createSelector(
-  selectTimeDataState,
-  fromTimeData.getTime
-);
-export const selectTimeDataTimeOfDay = createSelector(
-  selectTimeDataState,
-  fromTimeData.getTimeOfDay
-);
-
-const selectUIState = createFeatureSelector<fromUI.State>(`ui`);
-
-export const selectUIExpanded = createSelector(
-  selectUIState,
-  fromUI.getExpanded
-);

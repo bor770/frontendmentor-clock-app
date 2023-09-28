@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Width } from '../layout/layout.model';
-import * as fromRoot from '../../store/root.reducer';
+import * as LayoutSelectors from '../layout/store/layout.selectors';
 
 @Component({
   imports: [CommonModule],
@@ -19,6 +19,6 @@ export class BaseComponent implements OnInit {
   constructor(public store: Store) {}
 
   ngOnInit(): void {
-    this.width$ = this.store.select(fromRoot.selectLayoutWidth);
+    this.width$ = this.store.select(LayoutSelectors.selectState);
   }
 }
