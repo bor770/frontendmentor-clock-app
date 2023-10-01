@@ -1,0 +1,9 @@
+.tablet button {
+  padding: 0.5rem 0.56rem 0.5rem 1.31rem;
+  width: 9.12rem;
+}
+
+.tablet .content {
+  line-height: 175%;
+  letter-spacing: 5px;
+}

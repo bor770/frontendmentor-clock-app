@@ -8,6 +8,6 @@
     (mouseleave)="onHover()"
   >
     <span class="content">{{ buttonContent(observables.expanded) }}</span>
-    <img [src]="imgSrc(observables.expanded, observables.width)" alt="Arrow" />
+    <img alt="Arrow" [src]="imgSrc(observables.expanded, observables.width)" />
   </button>
 </div>

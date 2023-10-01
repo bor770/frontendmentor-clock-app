@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { BaseComponent } from '../shared/base/base.component';
 import { Features } from './expanded.model';
 import { TimeData, TimeOfDay } from '../shared/time-data/time-data.model';
+import { Width } from '../shared/layout/layout.model';
 import * as TimeDataSelectors from '../shared/time-data/store/time-data.selectors';
 
 @Component({
@@ -25,10 +26,11 @@ import * as TimeDataSelectors from '../shared/time-data/store/time-data.selector
 export class ExpandedComponent extends BaseComponent implements OnInit {
   features: Features = [
     { key: `timezone`, name: `current timezone` },
-    { key: `dayOfYear`, name: `day of the year` },
     { key: `dayOfWeek`, name: `day of the week` },
+    { key: `dayOfYear`, name: `day of the year` },
     { key: `weekNumber`, name: `week number` },
   ];
+  mobileOrder = [0, 2, 1, 3];
   timeDataState$: Observable<TimeData>;
   timeDataTimeOfDay$: Observable<TimeOfDay>;
 
@@ -39,5 +41,9 @@ export class ExpandedComponent extends BaseComponent implements OnInit {
     this.timeDataTimeOfDay$ = this.store.select(
       TimeDataSelectors.selectTimeOfDay
     );
+  }
+
+  order(i: number, width: Width) {
+    return width === 'mobile' ? this.mobileOrder[i] : undefined;
   }
 }

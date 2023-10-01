@@ -1,0 +1,25 @@
+.tablet .container {
+  padding: 7.44rem 10.38rem 7.44rem var(--padding-left);
+}
+
+.tablet ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  row-gap: 3rem;
+}
+
+.tablet li {
+  display: flex;
+  flex-direction: column;
+}
+
+.tablet .name {
+  font-size: 0.81rem;
+  line-height: 215.38%;
+  letter-spacing: 2.6px;
+}
+
+.tablet .value {
+  font-size: 2.5rem;
+}

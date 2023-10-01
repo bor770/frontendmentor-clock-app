@@ -16,7 +16,10 @@
     }"
   >
     <ul>
-      <li *ngFor="let feature of features">
+      <li
+        *ngFor="let feature of features; let i = index"
+        [ngStyle]="{ order: order(i, observables.width) }"
+      >
         <span class="name">{{ feature.name }}</span>
         <span class="value">{{ observables.timeDataState[feature.key] }}</span>
       </li>

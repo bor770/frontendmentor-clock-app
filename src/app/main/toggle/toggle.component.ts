@@ -36,7 +36,7 @@ export class ToggleComponent extends BaseComponent implements OnInit {
   }
 
   imgSrc(expanded: boolean, width: Width) {
-    return `../../../assets/images/desktop/icon-arrow-${
+    return `../../../assets/images/${width}/icon-arrow-${
       expanded ? `up` : `down`
     }-circle${this.hover && width === `desktop` ? `-hover` : ``}.svg`;
   }

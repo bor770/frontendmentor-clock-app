@@ -14,10 +14,10 @@
       <div class="greeting-phrase">
         Good {{ observables.timeOfDay
         }}<span
-          class="currently"
           *ngIf="
             observables.width === 'tablet' || observables.width === 'desktop'
           "
+          class="currently"
           >, it's currently</span
         >
       </div>

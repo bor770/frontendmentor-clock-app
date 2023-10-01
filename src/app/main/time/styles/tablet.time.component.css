@@ -3,7 +3,7 @@
 }
 
 .tablet .container {
-  display: block;
+  gap: 0;
 }
 
 .tablet .greeting {
@@ -13,4 +13,24 @@
 .tablet .greeting-phrase {
   letter-spacing: 3.6px;
   line-height: 155.56%;
+}
+
+.tablet .time {
+  gap: 11px;
+}
+
+.tablet .current-time {
+  font-size: 10.94rem;
+  letter-spacing: -4.37px;
+}
+
+.tablet .abbreviation {
+  font-size: 2rem;
+  line-height: 87.5%;
+  margin-top: 7.69rem;
+}
+
+.tablet .location {
+  line-height: 155.56%;
+  letter-spacing: 3.6px;
 }
