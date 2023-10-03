@@ -1,0 +1,8 @@
+.night {
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--color-3);
+}
+
+.night .divider {
+  background: var(--color-3);
+}
