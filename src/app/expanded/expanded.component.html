@@ -23,7 +23,7 @@
         <span class="name">{{ feature.name }}</span>
         <span class="value">{{ observables.timeDataState[feature.key] }}</span>
       </li>
+      <li *ngIf="observables.width === 'desktop'" class="divider"></li>
     </ul>
-    <div *ngIf="observables.width === 'desktop'" class="divider"></div>
   </div>
 </div>

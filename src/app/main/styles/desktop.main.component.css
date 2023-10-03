@@ -1,0 +1,9 @@
+.desktop {
+  padding: 3.5rem var(--padding-left);
+}
+
+.desktop.container {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+}

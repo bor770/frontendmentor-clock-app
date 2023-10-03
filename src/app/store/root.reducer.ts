@@ -5,14 +5,14 @@ import * as fromTime from '../main/time/store/time.reducer';
 import * as fromTimeData from '../shared/time-data/store/time-data.reducer';
 import * as fromUi from '../shared/ui/store/ui.reducer';
 
-interface AppState {
+interface RootState {
   layout: fromLayout.State;
   time: fromTime.State;
   timeData: fromTimeData.State;
   ui: fromUi.State;
 }
 
-export const appReducer: ActionReducerMap<AppState> = {
+export const rootReducer: ActionReducerMap<RootState> = {
   layout: fromLayout.reducer,
   time: fromTime.reducer,
   timeData: fromTimeData.reducer,

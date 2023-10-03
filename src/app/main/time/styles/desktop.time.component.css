@@ -1,0 +1,32 @@
+.desktop .greeting {
+  align-items: center;
+}
+
+.desktop .greeting-phrase {
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+  line-height: 140%;
+}
+
+.desktop .time {
+  gap: 11px;
+}
+
+.desktop .current-time {
+  font-size: 12.5rem;
+  letter-spacing: -5px;
+}
+
+.desktop .abbreviation {
+  font-size: 2.5rem;
+  line-height: 70%;
+  margin-top: 9.06rem;
+}
+
+.desktop .location {
+  font-size: 1.5rem;
+  line-height: 116.67%;
+  letter-spacing: 4.8px;
+}
+
+

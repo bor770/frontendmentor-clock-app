@@ -10,14 +10,13 @@
 }
 
 .tablet li {
-  display: flex;
   flex-direction: column;
 }
 
 .tablet .name {
   font-size: 0.81rem;
-  line-height: 215.38%;
   letter-spacing: 2.6px;
+  line-height: 215.38%;
 }
 
 .tablet .value {

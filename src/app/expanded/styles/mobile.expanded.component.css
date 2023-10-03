@@ -9,14 +9,13 @@
 }
 
 .mobile li {
-  display: flex;
   justify-content: space-between;
 }
 
 .mobile .name {
   font-size: 0.62rem;
-  line-height: 280%;
   letter-spacing: 2px;
+  line-height: 280%;
 }
 
 .mobile .value {

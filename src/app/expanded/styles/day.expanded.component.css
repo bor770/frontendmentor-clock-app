@@ -2,3 +2,7 @@
   background: rgba(255, 255, 255, 0.75);
   color: var(--color-2);
 }
+
+.day .divider {
+  background: var(--color-2);
+}
