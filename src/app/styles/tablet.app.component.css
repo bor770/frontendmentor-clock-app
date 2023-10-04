@@ -2,3 +2,7 @@
   --padding-left: 4rem;
   height: 64rem;
 }
+
+.tablet aside {
+  padding: 5rem 8.19rem 0 var(--padding-left);
+}
