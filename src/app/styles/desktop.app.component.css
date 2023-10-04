@@ -2,3 +2,7 @@
   --padding-left: 10.31rem;
   height: 50rem;
 }
+
+.desktop aside {
+  padding: 3.5rem 43.88rem 0 var(--padding-left);
+}

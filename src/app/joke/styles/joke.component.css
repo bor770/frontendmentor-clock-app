@@ -5,6 +5,7 @@
 }
 
 p {
+  color: var(--color-3);
   white-space: break-spaces;
 }
 

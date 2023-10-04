@@ -1,11 +1,10 @@
 <div
   *ngrxLet="{
     joke: joke$,
-    timeDataDayOrNight: timeDataDayOrNight$,
     width: width$
   } as observables"
   class="container"
-  [ngClass]="[observables.timeDataDayOrNight, observables.width]"
+  [ngClass]="observables.width"
 >
   <p>{{ observables.joke }}</p>
   <button (click)="refresh()">
