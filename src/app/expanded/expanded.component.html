@@ -1,20 +1,12 @@
 <div
   *ngrxLet="{
+    timeDataDayOrNight: timeDataDayOrNight$,
     timeDataState: timeDataState$,
-    timeDataTimeOfDay: timeDataTimeOfDay$,
     width: width$
   } as observables"
   [ngClass]="observables.width"
 >
-  <div
-    class="container"
-    [ngClass]="{
-      day:
-        observables.timeDataTimeOfDay === 'morning' ||
-        observables.timeDataTimeOfDay === 'afternoon',
-      night: observables.timeDataTimeOfDay === 'evening'
-    }"
-  >
+  <div class="container" [ngClass]="observables.timeDataDayOrNight">
     <ul>
       <li
         *ngFor="let feature of features; let i = index"

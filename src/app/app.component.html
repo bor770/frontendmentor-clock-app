@@ -10,6 +10,9 @@
     backgroundImage: bgImage(observables.timeOfDay, observables.width)
   }"
 >
+  <aside *ngIf="!observables.expanded" [@joke]>
+    <app-joke></app-joke>
+  </aside>
   <main>
     <app-main></app-main>
     <app-expanded *ngIf="observables.expanded" [@expanded]></app-expanded>

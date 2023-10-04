@@ -2,9 +2,13 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+aside {
+  overflow: hidden;
 }
 
 main {
-  margin-top: auto;
   overflow: hidden;
 }

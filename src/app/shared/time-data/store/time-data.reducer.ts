@@ -10,7 +10,7 @@ const initialState: State = null;
 export const reducer = createReducer(
   initialState,
   on(
-    TimeDataActions.setData,
+    TimeDataActions.set,
     (state, action): State => ({ ...state, ...action.data })
   )
 );

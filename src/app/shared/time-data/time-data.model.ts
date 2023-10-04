@@ -17,3 +17,5 @@ export type TimeData = {
 };
 
 export type TimeOfDay = `morning` | `afternoon` | `evening`;
+
+export type DayOrNight = `day` | `night`;

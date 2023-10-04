@@ -15,13 +15,8 @@ export class TimeDataEffects {
       ofType(rootEffectsInit),
       switchMap(() =>
         this.http.get<WorldtimeapiResonse>(this.apiURL).pipe(
-          map((data: WorldtimeapiResonse) => {
-            const pad = (number: number): string =>
-              String(number).padStart(2, `0`);
-
-            const time = new Date(data.datetime);
-
-            return TimeDataActions.setData({
+          map((data: WorldtimeapiResonse) =>
+            TimeDataActions.set({
               data: {
                 abbreviation: data.abbreviation,
                 dateTime: new Date(data.datetime),
@@ -30,8 +25,8 @@ export class TimeDataEffects {
                 timezone: data.timezone,
                 weekNumber: data.week_number,
               },
-            });
-          }),
+            })
+          ),
           catchError(() => of())
         )
       )

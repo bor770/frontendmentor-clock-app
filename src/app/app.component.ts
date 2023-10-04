@@ -7,12 +7,12 @@ import {
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LetDirective } from '@ngrx/component';
 import { Observable } from 'rxjs';
 
 import { BaseComponent } from './shared/base/base.component';
 import { ExpandedComponent } from './expanded/expanded.component';
+import { JokeComponent } from './joke/joke.component';
 import { MainComponent } from './main/main.component';
 import { TimeOfDay } from './shared/time-data/time-data.model';
 import { Width } from './shared/layout/layout.model';
@@ -32,12 +32,17 @@ import * as UiSelectors from './shared/ui/store/ui.selectors';
         animate(500, style({ height: `0`, transform: `translateY(100%)` }))
       ),
     ]),
+    trigger(`joke`, [
+      state(`in`, style({ height: `auto` })),
+      transition(`void => *`, [style({ height: `0` }), animate(500)]),
+      transition(`* => void`, animate(500, style({ height: `0` }))),
+    ]),
   ],
   imports: [
     CommonModule,
     LetDirective,
-    RouterOutlet,
     ExpandedComponent,
+    JokeComponent,
     MainComponent,
   ],
   selector: 'app-root',

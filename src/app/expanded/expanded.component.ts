@@ -4,8 +4,8 @@ import { LetDirective } from '@ngrx/component';
 import { Observable } from 'rxjs';
 
 import { BaseComponent } from '../shared/base/base.component';
+import { DayOrNight, TimeData } from '../shared/time-data/time-data.model';
 import { Features } from './expanded.model';
-import { TimeData, TimeOfDay } from '../shared/time-data/time-data.model';
 import { Width } from '../shared/layout/layout.model';
 import * as TimeDataSelectors from '../shared/time-data/store/time-data.selectors';
 
@@ -31,16 +31,16 @@ export class ExpandedComponent extends BaseComponent implements OnInit {
     { key: `weekNumber`, name: `week number` },
   ];
   mobileOrder = [0, 2, 1, 3];
+  timeDataDayOrNight$: Observable<DayOrNight>;
   timeDataState$: Observable<TimeData>;
-  timeDataTimeOfDay$: Observable<TimeOfDay>;
 
   ngOnInit(): void {
     super.ngOnInit();
 
-    this.timeDataState$ = this.store.select(TimeDataSelectors.selectState);
-    this.timeDataTimeOfDay$ = this.store.select(
-      TimeDataSelectors.selectTimeOfDay
-    );
+    const store = this.store;
+
+    this.timeDataDayOrNight$ = store.select(TimeDataSelectors.selectDayOrNight);
+    this.timeDataState$ = store.select(TimeDataSelectors.selectState);
   }
 
   order(i: number, width: Width) {

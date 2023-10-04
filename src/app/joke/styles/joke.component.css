@@ -1,0 +1,15 @@
+.container {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  white-space: break-spaces;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
