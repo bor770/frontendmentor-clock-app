@@ -6,10 +6,13 @@
   } as observables"
   class="container"
   [ngClass]="observables.width"
-  [ngStyle]="{
-    backgroundImage: bgImage(observables.timeOfDay, observables.width)
-  }"
 >
+  <div
+    class="background"
+    [ngStyle]="{
+      backgroundImage: bgImage(observables.timeOfDay, observables.width)
+    }"
+  ></div>
   <aside *ngIf="!observables.expanded" [@joke]>
     <app-joke></app-joke>
   </aside>
