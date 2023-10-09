@@ -7,10 +7,7 @@
   [ngClass]="observables.width"
 >
   <p>{{ observables.joke }}</p>
-  <button (click)="refresh()">
-    <img
-      src="../../assets/images/desktop/icon-refresh.svg"
-      alt="Refresh Icon"
-    />
+  <button (click)="refresh()" (mouseenter)="onHover()" (mouseleave)="onHover()">
+    <img alt="Refresh Icon" [src]="imgSrc()" />
   </button>
 </div>

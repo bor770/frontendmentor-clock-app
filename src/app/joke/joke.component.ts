@@ -21,11 +21,22 @@ import * as JokeSelectors from './store/joke.selectors';
 })
 export class JokeComponent extends BaseComponent implements OnInit {
   joke$: Observable<string>;
+  hover = false;
 
   ngOnInit(): void {
     super.ngOnInit();
 
     this.joke$ = this.store.select(JokeSelectors.selectState);
+  }
+
+  imgSrc() {
+    return `../../assets/images/desktop/icon-refresh${
+      this.hover ? `-hover` : ``
+    }.svg`;
+  }
+
+  onHover() {
+    this.hover = !this.hover;
   }
 
   refresh() {
