@@ -8,7 +8,7 @@ import * as TimeDataActions from './time-data.actions';
 
 @Injectable()
 export class TimeDataEffects {
-  apiURL = `http://worldtimeapi.org/api/ip`;
+  apiURL = `https://worldtimeapi.org/api/ip`;
 
   fetch = createEffect(() => {
     return this.actions$.pipe(

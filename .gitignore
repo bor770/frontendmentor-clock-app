@@ -43,3 +43,8 @@ Thumbs.db
 
 clock-app
 clock-app-figma
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

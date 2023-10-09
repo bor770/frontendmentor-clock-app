@@ -10,5 +10,6 @@ aside {
 }
 
 main {
+  margin-top: auto;
   overflow: hidden;
 }

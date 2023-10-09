@@ -5,7 +5,7 @@ import { catchError, map, of, switchMap } from 'rxjs';
 
 import { IpbaseAPIResponse } from '../location.model';
 import * as TimeActions from './time.actions';
-import { defaul } from './default';
+// import { defaul } from './default';
 
 @Injectable()
 export class TimeEffects {
@@ -15,22 +15,22 @@ export class TimeEffects {
   fetchLocation = createEffect(() => {
     return this.actions$.pipe(
       ofType(rootEffectsInit),
-      // switchMap(() =>
-      //   this.http
-      //     .get<IpbaseAPIResponse>(`${this.apiURL}?apikey=${this.apiKey}`)
-      //     .pipe(
-      //       map((data) =>
-      //         TimeActions.setLocation({
-      //           location: {
-      //             city: data.data.location.city.name,
-      //             country: data.data.location.country.name,
-      //           },
-      //         })
-      //       ),
-      //       catchError(() => of())
-      //     )
-      // )
-      map(() => TimeActions.setLocation({ location: defaul }))
+      switchMap(() =>
+        this.http
+          .get<IpbaseAPIResponse>(`${this.apiURL}?apikey=${this.apiKey}`)
+          .pipe(
+            map((data) =>
+              TimeActions.setLocation({
+                location: {
+                  city: data.data.location.city.name,
+                  country: data.data.location.country.name,
+                },
+              })
+            ),
+            catchError(() => of())
+          )
+      )
+      // map(() => TimeActions.setLocation({ location: defaul }))
     );
   });
 

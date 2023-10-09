@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "clock-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

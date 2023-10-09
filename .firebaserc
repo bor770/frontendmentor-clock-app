@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "frontendmentor-clock-app": {
+      "hosting": {
+        "clock-app": [
+          "frontendmentor-clock-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "frontendmentor-clock-app"
+  }
+}

@@ -6,5 +6,5 @@ const selectState = createFeatureSelector<fromTime.State>(`time`);
 
 export const selectLocation = createSelector(
   selectState,
-  (state) => `${state.location.city}, ${state.location.country}`
+  (state) => `${state.location?.city}, ${state.location?.country}`
 );
