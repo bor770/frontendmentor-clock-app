@@ -1,8 +1,9 @@
 <div
   *ngrxLet="{ expanded: expanded$, width: width$ } as observables"
-  class="container"
   [ngClass]="observables.width"
 >
-  <app-time></app-time>
-  <app-toggle></app-toggle>
+  <div class="container" [ngClass]="{ 'not-expanded': !observables.expanded }">
+    <app-time></app-time>
+    <app-toggle></app-toggle>
+  </div>
 </div>

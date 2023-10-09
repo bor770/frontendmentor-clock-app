@@ -2,8 +2,12 @@
   padding: 3.5rem var(--padding-left);
 }
 
-.desktop.container {
+.desktop .container {
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
+}
+
+.desktop .not-expanded {
+  padding-bottom: 2.63rem;
 }
